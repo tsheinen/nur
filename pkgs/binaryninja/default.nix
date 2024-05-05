@@ -72,5 +72,6 @@ stdenv.mkDerivation rec {
     description = description;
     platforms = [ "x86_64-linux" ];
     maintainers = [ "Thea Heinen <theinen@protonmail.com>" ];
+    broken = true;
   };
 }
