@@ -18,6 +18,7 @@
   radius2 = pkgs.callPackage ./pkgs/radius2 { };
   pokemon-colorscripts = pkgs.callPackage ./pkgs/pokemon-colorscripts { };
   signal-desktop-twitter = pkgs.callPackage ./pkgs/signal-desktop-twitter { };
+  seccomp-tools = pkgs.callPackage ./pkgs/seccomp-tools { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
