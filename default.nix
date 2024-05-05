@@ -14,7 +14,10 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
+  binaryninja = pkgs.callPackage ./pkgs/binaryninja { };
+  radius2 = pkgs.callPackage ./pkgs/radius2 { };
+  pokemon-colorscripts = pkgs.callPackage ./pkgs/pokemon-colorscripts { };
+  signal-desktop-twitter = pkgs.callPackage ./pkgs/signal-desktop-twitter { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
