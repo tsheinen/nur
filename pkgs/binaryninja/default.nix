@@ -31,6 +31,7 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/bin
     mkdir -p $out/share/icons
+    mkdir -p $python
     cp -r binaryninja $out
 
     ln -s $out/binaryninja/binaryninja $out/bin/binaryninja
