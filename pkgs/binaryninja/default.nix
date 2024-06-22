@@ -36,6 +36,7 @@ stdenv.mkDerivation rec {
     ln -s $out/binaryninja/binaryninja $out/bin/binaryninja
     ln -s $out/binaryninja/docs/img/logo.png $out/share/icons/binaryninja.png
     ln -s "$desktop/share/applications" $out/share/
+    ln -s $out/binaryninja/python/binaryninja $python/binaryninja
   '';
 
   postFixup = ''
@@ -66,7 +67,10 @@ stdenv.mkDerivation rec {
   runtimeDependencies = [
     python3 # libpython.so
   ];
-
+  outputs = [
+    "out"
+    "python"
+  ];
   meta = {
     homepage = "https://binary.ninja/";
     description = description;

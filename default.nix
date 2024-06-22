@@ -8,7 +8,7 @@
 
 { pkgs ? import <nixpkgs> { } }:
 
-{
+rec {
   # The `lib`, `modules`, and `overlays` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
@@ -19,6 +19,10 @@
   pokemon-colorscripts = pkgs.callPackage ./pkgs/pokemon-colorscripts { };
   signal-desktop-twitter = pkgs.callPackage ./pkgs/signal-desktop-twitter { };
   seccomp-tools = pkgs.callPackage ./pkgs/seccomp-tools { };
+
+  python311Packages = {
+    binaryninja = pkgs.python311Packages.toPythonModule(binaryninja.python);
+  };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
