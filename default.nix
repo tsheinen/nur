@@ -19,8 +19,6 @@ rec {
   pokemon-colorscripts = pkgs.callPackage ./pkgs/pokemon-colorscripts { };
   signal-desktop-twitter = pkgs.callPackage ./pkgs/signal-desktop-twitter { };
   seccomp-tools = pkgs.callPackage ./pkgs/seccomp-tools { };
-
-  binaryninja-python = pkgs.python311Packages.toPythonModule(binaryninja).python;
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
