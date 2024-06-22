@@ -20,9 +20,6 @@ rec {
   signal-desktop-twitter = pkgs.callPackage ./pkgs/signal-desktop-twitter { };
   seccomp-tools = pkgs.callPackage ./pkgs/seccomp-tools { };
 
-  python311Packages = {
-    binaryninja = pkgs.python311Packages.toPythonModule(binaryninja.python);
-  };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
