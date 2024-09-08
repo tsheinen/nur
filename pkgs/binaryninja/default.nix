@@ -31,13 +31,13 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/bin
     mkdir -p $out/share/icons
-    mkdir -p $python/lib/python3.11/site-packages/
+    mkdir -p $python/lib/python3.12/site-packages/
     cp -r binaryninja $out
 
     ln -s $out/binaryninja/binaryninja $out/bin/binaryninja
     ln -s $out/binaryninja/docs/img/logo.png $out/share/icons/binaryninja.png
     ln -s "$desktop/share/applications" $out/share/
-    ln -s $out/binaryninja/python/binaryninja $python/lib/python3.11/site-packages/binaryninja
+    ln -s $out/binaryninja/python/binaryninja $python/lib/python3.12/site-packages/binaryninja
   '';
 
   postFixup = ''
