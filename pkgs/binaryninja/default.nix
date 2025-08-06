@@ -1,5 +1,5 @@
 { stdenv, glib, libglvnd, xorg, fontconfig, dbus, autoPatchelfHook, requireFile
-, unzip, wayland, qt6, zlib, makeDesktopItem, python3, lib, makeWrapper }:
+, unzip, wayland, qt6, zlib, makeDesktopItem, python3, lib, makeWrapper, libxml2 }:
 
 stdenv.mkDerivation rec {
   pname = "binaryninja";
@@ -17,6 +17,12 @@ stdenv.mkDerivation rec {
 
   unpackPhase = ''
     ${unzip}/bin/unzip $src
+  '';
+
+  preFixup = ''
+    # Fix libxml2 breakage. See https://github.com/NixOS/nixpkgs/pull/396195#issuecomment-2881757108
+    mkdir -p "$out/lib"
+    ln -s "${lib.getLib libxml2}/lib/libxml2.so" "$out/lib/libxml2.so.2"
   '';
 
   desktop = makeDesktopItem {
