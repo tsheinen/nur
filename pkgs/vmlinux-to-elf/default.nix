@@ -5,6 +5,8 @@ buildPythonApplication {
   version = "1.0";
 
   propagatedBuildInputs = [ pip python-lzo lz4 zstandard ];
+  pyproject = true;
+  build-system = [ python3Packages.setuptools ];
 
   src = fetchFromGitHub {
     owner = "marin-m";
